@@ -24,7 +24,7 @@ object Quiz {
       output
     }
         //print question, for each answer print with a number (in order for the user, but not according to the grading number)
-        println(q)
+        println("\n" + q)
         for(i <- a) println((a.indexOf(i) + 1).toString + ". " + i._1)
         val ans = getIntOr(0) 
         if(ans <= 0 || ans > a.length) ask(q, a)
@@ -74,8 +74,8 @@ object Quiz {
     val q3 = "What kind of learning experience would you prefer?"
     val a3 = List("Challenging, but you will learn new paradigms or algorithms along the way", "Easy to get productive quickly", "Somewhere in between", "Not sure")
 
-    val q4 = "What would your langauge's defining personality characteristic be?"
-    val a4 = List("Easy-going", "Intellectual", "Professional", "Quirky", "Not sure")
+    val q4 = "Which James Bond?"
+    val a4 = List("Sean Connery", "Roger Moore", "Pierce Brosnan", "Daniel Craig", "Timothy Dalton")
     
     val q5 = "What should be your language's greatest strength?"
     val a5 = List("Logically consistent", "Concise", "Usable anywhere", "Fast", "Useful", "Not sure")
@@ -83,7 +83,7 @@ object Quiz {
     val q6 = "What weakness could you most accept in a language?"
     val a6 = List("Difficult to learn", "Error prone for large programs", "Verbose--lots of typing to do anything", "Inconsistent--has traps for the unwary", "Limited usage beyond a particular domain", "Lacks some features of more modern languages", "Not sure")
     
-    val q7 = "What interests you most?"
+    val q7 = "What are you most curious to learn more about?"
     val a7 = List("Data science", "Functional programming", "Object-oriented programming", "Front-end web development", "Back-end web development", "Apple ecosystem", "Microsoft ecosystem", "Systems programming", "Games and finance programming", "Not sure")  
 
     val q8 = "Which Star Wars character do you most resemble?"
@@ -98,21 +98,29 @@ object Quiz {
         "Chewbacca: Terse; excels with improvised solutions to technical problems.",
         "Jar Jar Binks: Occassionally does something useful by complete accident; repetitive."
         )
-    val questions: List[String] = List(q1, q2, q3, q4, q5, q6, q7, q8)
-    val answers: List[List[String]] = List(a1, a2, a3, a4, a5, a6, a7, a8)
+        
+    val q9 = "Which house would your language be sorted into at Hogwarts?" 
+    val a9 = List(
+        "Griffindor", 
+        "Slytherin",
+        "Ravenclaw",
+        "Hufflepuff")
+        
+    val questions: List[String] = List(q1, q2, q3, q4, q5, q6, q7, q8, q9)
+    val answers: List[List[String]] = List(a1, a2, a3, a4, a5, a6, a7, a8, a9)
     val languages = Map(
-      "Java" -> List(2, 1, 3, 3, 3, 3, 3, 6),
-      "Python" -> List(2, 1, 2, 1, 1, 2, 1, 8),
-      "C" -> List(3, 1, 3, 2, 4, 6, 8, 2),
-      "C++" -> List(3, 1, 1, 2, 4, 1, 9, 3),
-      "Javascript" -> List(1, 1, 2, 1, 4, 4, 1),
-      "PHP" -> List(1, 1, 2, 4, 5, 5, 5, 9),
-      "Scala" -> List(2, 2, 1, 2, 1, 1, 2, 1),
-      "C#" -> List(2, 3, 3, 3, 3, 1, 5, 7, 4),
-      "Ruby" -> List(1, 2, 2, 1, 2, 5, 5, 7),
-      "Go" -> List(2, 3, 3, 2, 1, 1, 8, 4),
-      "Swift" -> List(4, 3, 3, 3, 5, 5, 6, 4),
-      "Haskell" -> List(2, 1, 1, 2, 1, 5, 2, 9)
+      "Java" -> List(2, 1, 3, 1, 3, 3, 3, 6, 1),
+      "Python" -> List(2, 1, 2, 2, 1, 2, 1, 8, 1),
+      "C" -> List(3, 1, 3, 1, 4, 6, 8, 2, 1),
+      "C++" -> List(3, 1, 1, 1, 4, 1, 9, 3, 2),
+      "Javascript" -> List(1, 1, 2, 3, 4, 4, 1, 2),
+      "PHP" -> List(1, 1, 2, 5, 5, 5, 5, 9, 4),
+      "Scala" -> List(2, 2, 1, 3, 1, 1, 2, 1, 3),
+      "C#" -> List(2, 3, 3, 2, 3, 1, 5, 7, 4, 3),
+      "Ruby" -> List(1, 2, 2, 4, 2, 5, 5, 7, 4),
+      "Go" -> List(2, 3, 3, 4, 1, 1, 8, 4, 4),
+      "Swift" -> List(4, 3, 4, 4, 5, 5, 6, 4, 2),
+      "Haskell" -> List(2, 1, 1, 2, 1, 5, 2, 9, 3)
       )
     val use = Quiz(questions, answers, languages)
     }
